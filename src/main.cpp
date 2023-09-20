@@ -5,7 +5,7 @@
 int main() 
 {
     Ant ant = Ant(0.0, 0.0);
-    for (int i = 0; i<100; i++)
+    for (int i = 0; i<10000; i++)
     {
         ant.randomWalk();
         ant.move(0.1);

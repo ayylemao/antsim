@@ -6,7 +6,7 @@ Ant::Ant(double pos_x, double pos_y)
     pos.x = pos_x;
     pos.y = pos_y;
     carrying = false;
-    MAX_ANGLE = M_PI / 6;
+    MAX_ANGLE = M_PI / 12;
     STEP_SIZE = 1;
     srand(static_cast <unsigned> (time(0)));
 
@@ -15,8 +15,8 @@ Ant::Ant(double pos_x, double pos_y)
 
 void Ant::move(double dt)
 {
-    pos.x += STEP_SIZE * std::cos(dir);
-    pos.y += STEP_SIZE * std::sin(dir);
+    pos.x += STEP_SIZE * std::cos(dir) * dt;
+    pos.y += STEP_SIZE * std::sin(dir) * dt;
 }
 
 void Ant::randomWalk()
