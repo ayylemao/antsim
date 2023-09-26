@@ -6,9 +6,10 @@ Ant::Ant(double pos_x, double pos_y)
     pos.x = pos_x;
     pos.y = pos_y;
     carrying = false;
-    MAX_ANGLE = M_PI / 12;
+    MAX_ANGLE = M_PI / 20;
     STEP_SIZE = 1;
     srand(static_cast <unsigned> (time(0)));
+    std::mt19937 e2(rd());
 
 
 }
@@ -21,10 +22,6 @@ void Ant::move(double dt)
 
 void Ant::randomWalk()
 {
-    // Generate a random angle to adjust the current direction
-    std::random_device rd;
-
-    std::mt19937 e2(rd());
     std::uniform_real_distribution<double> dist(-MAX_ANGLE, MAX_ANGLE);
     double angle = dist(e2);
 
@@ -37,9 +34,6 @@ void Ant::randomWalk()
         dir -= 2 * M_PI;
     }
 
-    //// Calculate the new position based on the current direction
-    //position.x += stepSize * std::cos(direction);
-    //position.y += stepSize * std::sin(direction);
 }
 
 Ant::~Ant()

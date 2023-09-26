@@ -1,3 +1,10 @@
 *.out
 .vscode
-
+.vs/
+Debug/
+ant_simulation
+packages.config
+packages/
+*.obj
+*.pdb
+x64/

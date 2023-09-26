@@ -16,6 +16,8 @@ class Ant
         bool carrying;
         double MAX_ANGLE;
         double STEP_SIZE;
+        std::random_device rd;
+        std::mt19937 e2;
 
         Ant(double pos_x, double pos_y);
         
